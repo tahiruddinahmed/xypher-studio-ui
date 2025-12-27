@@ -25,7 +25,7 @@ const TextType = ({
     if (words.length === 0) return
 
     const currentWord = words[currentWordIndex]
-    let timeout: NodeJS.Timeout
+    let timeout: ReturnType<typeof setTimeout>
 
     if (!isDeleting) {
       // Typing phase

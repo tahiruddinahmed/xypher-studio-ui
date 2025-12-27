@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
 import Card from '../ui/Card'
 import Section from '../ui/Section'

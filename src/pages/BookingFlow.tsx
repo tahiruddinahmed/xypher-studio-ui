@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, Calendar, MapPin, CreditCard, ArrowRight, ArrowLeft } from 'lucide-react'
 import Button from '../components/ui/Button'
@@ -14,7 +14,6 @@ const steps = [
 ]
 
 const BookingFlow = () => {
-  const { providerId } = useParams<{ providerId: string }>()
   const navigate = useNavigate()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState({

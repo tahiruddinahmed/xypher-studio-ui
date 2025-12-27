@@ -91,7 +91,7 @@ const MobileBottomNavbar = () => {
             </AnimatePresence>
 
             {/* Navigation items */}
-            {navItems.map((item, index) => {
+            {navItems.map((item) => {
               const Icon = item.icon
               const active = isActive(item.route)
 

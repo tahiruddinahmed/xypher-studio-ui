@@ -16,14 +16,14 @@ const AnimatedTypography = ({
 }: AnimatedTypographyProps) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [displayedText, setDisplayedText] = useState('')
-  const [isTyping, setIsTyping] = useState(true)
+  const [isTyping] = useState(true)
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
     if (words.length === 0) return
     
     const currentWord = words[currentWordIndex]
-    let timeout: NodeJS.Timeout | undefined
+    let timeout: ReturnType<typeof setTimeout> | undefined
 
     if (isTyping && !isDeleting) {
       // Typing phase
@@ -54,8 +54,6 @@ const AnimatedTypography = ({
       if (timeout) clearTimeout(timeout)
     }
   }, [displayedText, isTyping, isDeleting, currentWordIndex, words, typingSpeed, pauseDuration])
-
-  const currentWord = words[currentWordIndex]
 
   return (
     <span className="inline-block min-h-[1.2em]">

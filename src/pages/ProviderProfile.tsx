@@ -25,7 +25,7 @@ const providerData = {
 
 const ProviderProfile = () => {
   const { id } = useParams<{ id: string }>()
-  const provider = providerData[id as keyof typeof providerData]
+  const provider = id ? providerData[id as unknown as keyof typeof providerData] : undefined
 
   if (!provider) {
     return (
